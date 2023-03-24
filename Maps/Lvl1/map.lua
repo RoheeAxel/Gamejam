@@ -19,7 +19,7 @@ return {
       tileheight = 32,
       spacing = 0,
       margin = 0,
-      image = "lvl1.png",
+      image = "lvl1iso.png",
       imagewidth = 128,
       imageheight = 128,
       tileoffset = {

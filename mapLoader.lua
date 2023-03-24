@@ -17,20 +17,26 @@ end
 
 function makeQuad()
   environement={}
-  stackLine=image:getWidth()/map.tilesets[1].tilewidth + 1
+  stackLine=image:getWidth()/map.tilesets[1].tilewidth 
+  print(stackLine)
   for i=1,128 do
-    environement[i]=love.graphics.newQuad(i%stackLine*map.tilesets[1].tilewidth-map.tilesets[1].tilewidth,math.floor(i/stackLine)*map.tilesets[1].tilewidth,map.tilesets[1].tilewidth,map.tilesets[1].tilewidth,image:getWidth(),image:getHeight())
+    environement[i]=love.graphics.newQuad((i%stackLine + 1)*map.tilesets[1].tilewidth-map.tilesets[1].tilewidth,math.floor(i/stackLine)*map.tilesets[1].tilewidth,map.tilesets[1].tilewidth,map.tilesets[1].tilewidth,image:getWidth(),image:getHeight())
   end
   return environement
 end
 
-function Draw(tab, texture, x, y)
+function Draw(tab, x, y)
   for i = 1,map.layers[1].width do
     for j = 1,map.layers[1].height do
-      stackLine=texture:getWidth()/map.tilesets[1].tilewidth
+      stackLine=image:getWidth()/map.tilesets[1].tilewidth
       id=tab[i][j]
       if id>0 and id~=nil then
-        love.graphics.draw(texture,environement[id],j*map.tilesets[1].tilewidth-map.tilesets[1].tilewidth-1 + x,i*map.tilesets[1].tilewidth-map.tilesets[1].tilewidth-1 + y)
+        local xpos = 16*j- 16*i
+        local ypos = 8*i+ 8*j
+        if id==2 then
+          ypos = ypos - 16
+        end
+        love.graphics.draw(image,environement[id],xpos + x,ypos + y)
       end
     end
   end
