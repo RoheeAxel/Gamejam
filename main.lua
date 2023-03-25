@@ -17,6 +17,9 @@ function love.load()
         Background[i] = love.graphics.newImage("Assets/Background/cyberpunk/" .. i - 1 .. ".png")
     end
     time = 0
+    --Musics
+    Musics = require("musics")
+    Musics = createMusics()
 
 end
 
@@ -30,6 +33,7 @@ end
 function love.keypressed(key)
     updatePlayer(player1, key, currentMap[1])
     updatePlayer(player2, key, currentMap[2])
+    updateMusic(Musics, key)
 end
 
 function love.update(dt)
