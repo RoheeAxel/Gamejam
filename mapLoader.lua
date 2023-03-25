@@ -17,7 +17,7 @@ end
 
 function makeQuad()
   environement={}
-  stackLine=image:getWidth()/map.tilesets[1].tilewidth 
+  stackLine=image:getWidth()/map.tilesets[1].tilewidth
   for i=1,128 do
     environement[i]=love.graphics.newQuad(
     (i-1)%(stackLine)*map.tilesets[1].tilewidth,
@@ -27,6 +27,12 @@ function makeQuad()
 end
 
 function Draw(tab, x, y)
+  love.graphics.setColor(71 / 255,46 /255,98/255)
+  love.graphics.rectangle("fill", x + 16, y + 160, 304, 800)
+  love.graphics.setColor(58/255,18/255,59/255)
+  love.graphics.rectangle("fill", x + 16, y + 160, -304, 800)
+  love.graphics.setColor(1,1,1)
+
   for i = 1,map.layers[1].width do
     for j = 1,map.layers[1].height do
       stackLine=image:getWidth()/map.tilesets[1].tilewidth
