@@ -1,14 +1,10 @@
-local menus = { "play", "option", "quit" }
-local selected_menu_item = 1
-local window_width
-local window_height
-local font_height
-
 require("game")
 
 function love.load()
     --Menu
+    menus = { "play", "option", "quit" }
     game_state = 'menu'
+    selected_menu_item = 1
     title = love.graphics.newImage("Assets/Menu/title.png")
     button_play = love.graphics.newImage("Assets/Menu/buttonPlay.png")
     button_option = love.graphics.newImage("Assets/Menu/gear.png")
@@ -79,7 +75,7 @@ function draw_menu()
 end
 
 function draw_option()
-    love.graphics.printf("option", 0, window_height / 2 - font_height / 2, window_width, 'center')
+    love.graphics.print("Option", 10, 10)
 end
 
 function love.keypressed(key, scan_code, is_repeat)
