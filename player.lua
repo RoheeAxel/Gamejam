@@ -1,3 +1,5 @@
+require("specialTile")
+
 function updatePlayer(self, key, map, index)
     print(index..":"..self.x..","..self.y..","..self.dir)
 
