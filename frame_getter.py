@@ -1,4 +1,5 @@
 import os
+import sys
 import numpy as np
 import cv2
 from glob import glob
@@ -33,7 +34,7 @@ def save_frame(video_path, save_dir, gap=10):
         idx += 1
 
 if __name__ == "__main__":
-    video_paths = glob("Assets/cyberpunk.gif")
+    video_paths = glob(sys.argv[1])
     save_dir = "Assets/frames"
 
     for path in video_paths:
