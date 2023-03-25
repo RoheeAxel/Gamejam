@@ -35,6 +35,10 @@ function love.load()
     end
     Waterfall[4] = love.graphics.newImage("Assets/waterfall/2.png")
     Waterfall[5] = love.graphics.newImage("Assets/waterfall/0.png")
+    TVopening = {}
+    for i = 1, 60 do
+        TVopening[i] = love.graphics.newImage("Assets/opening/" .. i - 1 .. ".png")
+    end
     --Musics
     Musics = require("musics")
     Musics = createMusics()
@@ -81,6 +85,12 @@ end
 
 function draw_menu()
     local vertical_center = window_height / 2
+
+    love.graphics.draw(TVopening[math.floor(frame % 59) + 1], 0, 0, 0, 2.68, 2.85)
+    -- put a rectangle size of the window with a opacity
+	love.graphics.setColor(0, 0, 0, 0.25)
+    love.graphics.rectangle("fill", 0, 0, window_width, window_height, 0, 0, 0, 0.5)
+	love.graphics.setColor(1, 1, 1, 1)
 
     if selected_menu_item == 1 then
         love.graphics.draw(button_play, 430, 320, 0, 0.8, 0.8)
