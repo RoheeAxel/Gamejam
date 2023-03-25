@@ -17,7 +17,7 @@ end
 
 function makeQuad()
   environement={}
-  stackLine=image:getWidth()/map.tilesets[1].tilewidth 
+  stackLine=image:getWidth()/map.tilesets[1].tilewidth
   for i=1,128 do
     environement[i]=love.graphics.newQuad(
     (i-1)%(stackLine)*map.tilesets[1].tilewidth,
