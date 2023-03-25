@@ -14,6 +14,12 @@ function love.load()
     Background = {}
     isLoaded = 1
     time = 0
+    Waterfall = {}
+    for i = 1, 3 do
+        Waterfall[i] = love.graphics.newImage("Assets/waterfall/" .. i - 1 .. ".png")
+    end
+    Waterfall[4] = love.graphics.newImage("Assets/waterfall/2.png")
+    Waterfall[5] = love.graphics.newImage("Assets/waterfall/0.png")
     --Musics
     Musics = require("musics")
     Musics = createMusics()
@@ -21,19 +27,23 @@ function love.load()
 end
 
 function love.draw()
-    local frame = math.floor(time * 10) % 33 + 1
+    local frame = math.floor(time * 10) % 111 + 1
 
     -- Game draw here
-    if isLoaded == 448 / 4 then
-        love.graphics.draw(Background[frame], 0, 0,0,1,1)
+    if isLoaded == 112 then
+        love.graphics.draw(Background[frame], 0, 0, 0, 1, 1)
         love.graphics.draw(Background[frame], 1168 * 2, 0, 0, -1, 1)
         myMap.Draw(currentMap[1], 304, 112)
         myMap.Draw(currentMap[2], 1280/2 + 304, 112)
-    elseif isLoaded ~= 448 / 4 then
+    elseif isLoaded ~= 112 then
+        love.graphics.draw(Waterfall[math.floor(frame % 4) + 1], 440, 0, 0, 1, 1)
         love.graphics.setColor(0, 0, 0)
         love.graphics.rectangle("fill", 320, 720 / 2 + 100, 640, 15)
         love.graphics.setColor(236 / 256, 89 / 256, 233 / 256)
-        love.graphics.rectangle("fill", 320, 720 / 2 + 100, 640 * (isLoaded / (448 / 4)), 15)
+        love.graphics.rectangle("fill", 320, 720 / 2 + 100, 640 * (isLoaded / 112), 15)
+        local loadingText = string.format("Loading sick background... %d%%", isLoaded / 112 * 100)
+        love.graphics.print(loadingText, 550, 720 / 2 + 150)
+        love.graphics.setColor(1, 1, 1)
     end
 end
 
@@ -45,7 +55,7 @@ end
 
 function love.update(dt)
     time = time + dt
-    if isLoaded ~= 448 / 4 then
+    if isLoaded ~= 112 then
         Background[isLoaded] = love.graphics.newImage("Assets/frames/background-cyberpunk/" .. isLoaded - 1 .. ".png")
         isLoaded = isLoaded + 1
     end

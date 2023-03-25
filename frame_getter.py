@@ -11,7 +11,7 @@ def create_dir(path):
     except OSError:
         print(f"ERROR: creating directory with name {path}")
 
-def save_frame(video_path, save_dir, gap=10):
+def save_frame(video_path, save_dir, gap=40):
     name = video_path.split("/")[-1].split(".")[0]
     save_path = os.path.join(save_dir, name)
     create_dir(save_path)
