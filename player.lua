@@ -23,7 +23,7 @@ function updatePlayer(self, key, map, index)
         end
     end
     self.under = map[self.x][self.y]
-    map[self.x][self.y] = 4
+    map[self.x][self.y] = 11
     if (self.under == 3) then
         self.dir = self.dir * -1
     elseif (self.under == 2) then
@@ -33,7 +33,7 @@ function updatePlayer(self, key, map, index)
             self.x = otherTp[1]
             self.y = otherTp[2]
             self.under = map[self.x][self.y]
-            map[self.x][self.y] = 4
+            map[self.x][self.y] = 11
         end
     end
 end

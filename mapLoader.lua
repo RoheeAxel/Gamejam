@@ -18,10 +18,15 @@ end
 function makeQuad()
   environement={}
   stackLine=image:getWidth()/map.tilesets[1].tilewidth
-  for i=1,128 do
-    environement[i]=love.graphics.newQuad(
-    (i-1)%(stackLine)*map.tilesets[1].tilewidth,
-    math.floor(i/(stackLine +1))*map.tilesets[1].tilewidth,map.tilesets[1].tilewidth,map.tilesets[1].tilewidth,image:getWidth(),image:getHeight())
+  for j=1,16 do
+
+    environement[j] = {}
+
+    for i=1,33 do
+        environement[j][i]=love.graphics.newQuad(
+        (i-1)%(stackLine)*map.tilesets[1].tilewidth,
+        math.floor(i/(stackLine +1))*map.tilesets[1].tilewidth + j * 96,map.tilesets[1].tilewidth,map.tilesets[1].tilewidth,image:getWidth(),image:getHeight())
+    end
   end
   return environement
 end
@@ -43,7 +48,11 @@ function Draw(tab, x, y)
         if id >= 4 then
           ypos = ypos - 16
         end
-        love.graphics.draw(image,environement[id],xpos + x,ypos + y)
+        my_frame = (frame) % 15 + 1
+        if (id > 23) then
+            love.graphics.draw(image,environement[1][1],xpos + x,ypos + y)
+        end
+        love.graphics.draw(image,environement[my_frame][id],xpos + x,ypos + y)
       end
     end
   end
