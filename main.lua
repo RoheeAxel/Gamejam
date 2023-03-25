@@ -9,7 +9,7 @@ function love.load()
     myMap = require("mapLoader")
     currentMap = {}
     currentMap[1] = myMap.generateMap("Maps/Lvl1/map", 1)
-    currentMap[2] = myMap.generateMap("Maps/Lvl1/map", 1)
+    currentMap[2] = myMap.generateMap("Maps/Lvl1/mapside", 1)
     separatedTileSet = myMap.makeQuad()
     --Background
     Background = {}
@@ -31,8 +31,8 @@ function love.draw()
 end
 
 function love.keypressed(key)
-    updatePlayer(player1, key, currentMap[1])
-    updatePlayer(player2, key, currentMap[2])
+    updatePlayer(player1, key, currentMap[1], 1)
+    updatePlayer(player2, key, currentMap[2], 2)
     updateMusic(Musics, key)
 end
 
