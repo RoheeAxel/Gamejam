@@ -1,3 +1,5 @@
+require("specialTile")
+
 function updatePlayer(self, key, map, index)
     print(index..":"..self.x..","..self.y..","..self.dir)
 
@@ -26,6 +28,15 @@ function updatePlayer(self, key, map, index)
     map[self.x][self.y] = 4
     if (self.under == 3) then
         self.dir = self.dir * -1
+    elseif (self.under == 2) then
+        tp = findOtherTp(map)
+        if tp ~= 0 then
+            map[self.x][self.y] = self.under
+            self.x = tp[1]
+            self.y = tp[2]
+            self.under = map[self.x][self.y]
+            map[self.x][self.y] = 4
+        end
     end
 end
 
