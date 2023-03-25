@@ -5,8 +5,8 @@ function love.load()
     menus = { "play", "option", "quit" }
     game_state = 'loading'
     selected_menu_item = 1
-    title = love.graphics.newImage("Assets/Menu/title.png")
-    button_play = love.graphics.newImage("Assets/Menu/buttonPlay.png")
+    title = love.graphics.newImage("Assets/Menu/title2.png")
+    button_play = love.graphics.newImage("Assets/Menu/buttonPlay2.png")
     button_option = love.graphics.newImage("Assets/Menu/gear.png")
     button_close = love.graphics.newImage("Assets/Menu/close.png")
     window_width, window_height = love.graphics.getDimensions()
