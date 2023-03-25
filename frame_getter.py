@@ -29,7 +29,8 @@ def save_frame(video_path, save_dir, gap=10):
         if idx == 0:
             cv2.imwrite(f"{save_path}/{idx}.png", frame)
         else:
-            cv2.imwrite(f"{save_path}/{idx}.png", frame)
+            if (idx % gap) == 0:
+                cv2.imwrite(f"{save_path}/{idx}.png", frame)
 
         idx += 1
 
@@ -38,4 +39,4 @@ if __name__ == "__main__":
     save_dir = "Assets/frames"
 
     for path in video_paths:
-        save_frame(path, save_dir, gap=10)
+        save_frame(path, save_dir, gap=1)
