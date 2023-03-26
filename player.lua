@@ -7,12 +7,12 @@ function updatePlayer(self, key, map, index)
             self.x = self.x - 1 * self.dir
         end
     end
-    if (key=="down"  or key=="a") then
+    if (key=="left"  or key=="a") then
         if map[self.x][self.y - 1* self.dir] < 4 then
             self.y = self.y - 1 * self.dir
         end
     end
-    if (key=="left" or key=="w") then
+    if (key=="down" or key=="w") then
         if map[self.x + 1* self.dir][self.y] < 4 then
             self.x = self.x + 1 * self.dir
         end
