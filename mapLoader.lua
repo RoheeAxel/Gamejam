@@ -48,7 +48,7 @@ function Draw(tab, x, y)
         if id >= 4 then
           ypos = ypos - 16
         end
-        my_frame = (frame) % 15 + 1
+        my_frame = math.floor((frame)/4) % 15 + 1
         if (id > 23) then
             love.graphics.draw(image,environement[1][1],xpos + x,ypos + y)
         end
