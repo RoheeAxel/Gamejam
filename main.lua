@@ -42,6 +42,8 @@ function love.load()
     --Musics
     Musics = require("musics")
     Musics = createMusics()
+    --Font
+    font1 = love.graphics.newFont("Assets/font.ttf", 40)
 end
 
 function love.update(dt)
