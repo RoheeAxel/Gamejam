@@ -27,6 +27,15 @@ function love.load()
     currentMap[2] = {}
     currentMap[2][1] = myMap.generateMap("Maps/Lvl2/level-a", 1)
     currentMap[2][2] = myMap.generateMap("Maps/Lvl2/level-b", 1)
+    currentMap[3] = {}
+    currentMap[3][1] = myMap.generateMap("Maps/Lvl3/level-a", 1)
+    currentMap[3][2] = myMap.generateMap("Maps/Lvl3/level-b", 1)
+    currentMap[4] = {}
+    currentMap[4][1] = myMap.generateMap("Maps/Lvl4/level-a", 1)
+    currentMap[4][2] = myMap.generateMap("Maps/Lvl4/level-b", 1)
+    -- currentMap[5] = {}
+    -- currentMap[5][1] = myMap.generateMap("Maps/Lvl5/level-a", 1)
+    -- currentMap[5][2] = myMap.generateMap("Maps/Lvl5/level-b", 1)
     separatedTileSet = myMap.makeQuad()
     --Background
     -- Background
