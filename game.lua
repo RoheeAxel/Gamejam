@@ -10,6 +10,12 @@ function draw_game(frame, i)
         currentMap[1][2] = myMap.generateMap("Maps/Lvl1/level-a", 1)
         currentMap[2][1] = myMap.generateMap("Maps/Lvl2/level-a", 1)
         currentMap[2][2] = myMap.generateMap("Maps/Lvl2/level-b", 1)
+        currentMap[3][1] = myMap.generateMap("Maps/Lvl3/level-a", 1)
+        currentMap[3][2] = myMap.generateMap("Maps/Lvl3/level-b", 1)
+        currentMap[4][1] = myMap.generateMap("Maps/Lvl4/level-a", 1)
+        currentMap[4][2] = myMap.generateMap("Maps/Lvl4/level-b", 1)
+        player1.dir = 1
+        player2.dir = 1
         findPlayer(currentMap[player1.lvl][1], player1)
         findPlayer(currentMap[player2.lvl][2], player2)
         -- reload map
