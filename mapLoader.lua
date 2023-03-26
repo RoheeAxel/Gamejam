@@ -45,7 +45,7 @@ function Draw(tab, x, y)
       if id>0 and id~=nil then
         local xpos = 16*j- 16*i
         local ypos = 8*i+ 8*j
-        if id >= 4 then
+        if id >= 10 then
           ypos = ypos - 16
         end
         my_frame = math.floor((frame)/4) % 15 + 1

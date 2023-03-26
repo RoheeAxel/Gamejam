@@ -21,7 +21,7 @@ function love.load()
     --Map loading
     myMap = require("mapLoader")
     currentMap = {}
-    currentMap[1] = myMap.generateMap("Maps/Lvl1/map", 1)
+    currentMap[1] = myMap.generateMap("Maps/Lvl2/level-a", 1)
     currentMap[2] = myMap.generateMap("Maps/Lvl1/mapside", 1)
     separatedTileSet = myMap.makeQuad()
     --Background
