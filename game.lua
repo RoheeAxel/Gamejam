@@ -1,7 +1,6 @@
 function draw_game(frame, i)
     love.graphics.draw(Background[frame], 0, 0, 0, 1, 1)
     love.graphics.draw(Background[frame], 1168 * 2, 0, 0, -1, 1)
-    print(i)
     if table.getn(currentMap) < i then
         game_state = 'menu'
         player1.lvl = 1
