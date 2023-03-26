@@ -44,6 +44,20 @@ function love.load()
     Musics = createMusics()
     --Font
     font1 = love.graphics.newFont("Assets/font.ttf", 40)
+    --Neon
+    neon = {}
+    neon[1] = {}
+    neon[1][1] = love.graphics.newImage("Assets/Neon/Ciceris1.png")
+    neon[1][2] = love.graphics.newImage("Assets/Neon/Ciceris2.png")
+    neon[1][3] = love.graphics.newImage("Assets/Neon/Ciceris3.png")
+    neon[2] = {}
+    neon[2][1] = love.graphics.newImage("Assets/Neon/grogus1.png")
+    neon[2][2] = love.graphics.newImage("Assets/Neon/grogus2.png")
+    neon[2][3] = love.graphics.newImage("Assets/Neon/grogus3.png")
+    neon[3] = {}
+    neon[3][1] = love.graphics.newImage("Assets/Neon/Nami1.png")
+    neon[3][2] = love.graphics.newImage("Assets/Neon/Nami2.png")
+    neon[3][3] = love.graphics.newImage("Assets/Neon/Nami3.png")
 end
 
 function love.update(dt)
