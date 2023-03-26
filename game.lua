@@ -6,6 +6,13 @@ function draw_game(frame, i)
         player1.lvl = 1
         player2.lvl = 1
         time = 0
+        currentMap[1][1] = myMap.generateMap("Maps/Lvl1/level-a", 1)
+        currentMap[1][2] = myMap.generateMap("Maps/Lvl1/level-a", 1)
+        currentMap[2][1] = myMap.generateMap("Maps/Lvl2/level-a", 1)
+        currentMap[2][2] = myMap.generateMap("Maps/Lvl2/level-b", 1)
+        findPlayer(currentMap[player1.lvl][1], player1)
+        findPlayer(currentMap[player2.lvl][2], player2)
+        -- reload map
         return
     end
     myMap.Draw(currentMap[i][1], 304, 256)
@@ -43,11 +50,12 @@ function update_game(dt)
        currentMap[player2.lvl][2][player2.x][player2.y] = 4
        player1.lvl = player1.lvl + 1
        player2.lvl = player1.lvl
-       player1.under = 0
-       player2.under = 0
-       player1.x = 2
-       player1.y = 2
-       player2.x = 2
-       player2.y = 2
+       player1.under = 1
+       player2.under = 1
+
+       if table.getn(currentMap) >= player1.lvl then
+        findPlayer(currentMap[player1.lvl][1], player1)
+        findPlayer(currentMap[player2.lvl][2], player2)
+       end
     end
 end

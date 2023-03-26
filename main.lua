@@ -28,7 +28,8 @@ function love.load()
     currentMap[2][1] = myMap.generateMap("Maps/Lvl2/level-a", 1)
     currentMap[2][2] = myMap.generateMap("Maps/Lvl2/level-b", 1)
     separatedTileSet = myMap.makeQuad()
-    --Background
+    findPlayer(currentMap[1][1], player1)
+    findPlayer(currentMap[1][2], player2)
     -- Background
     Background = {}
     isLoaded = 1
