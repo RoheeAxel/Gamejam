@@ -32,9 +32,10 @@ function makeQuad()
 end
 
 function Draw(tab, x, y)
-  love.graphics.setColor(71 / 255,46 /255,98/255)
+
+  love.graphics.setColor(58 / 255, 18 / 255, 59 / 255)
   love.graphics.rectangle("fill", x + 16, y + 160, 304, 800)
-  love.graphics.setColor(58/255,18/255,59/255)
+  love.graphics.setColor(71 / 255, 46 / 255, 98 / 255)
   love.graphics.rectangle("fill", x + 16, y + 160, -304, 800)
   love.graphics.setColor(1,1,1)
 
