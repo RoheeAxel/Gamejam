@@ -10,6 +10,16 @@ function draw_game(frame)
         love.graphics.print((math.floor(Musics.actualtime / 60)) .. ":" .. (math.floor(Musics.actualtime % 60))..':'..(math.floor(Musics.actualtime *100 %100)), 1100, 10)
         love.graphics.setColor(1,1,1)
     end
+    neonFrame = math.floor(time) % 3 + 1
+    love.graphics.draw(neon[1][neonFrame] , 40, 512, 0, 1, 1)
+    love.graphics.draw(neon[1][neonFrame] , 120, 600, 0, 1, 1)
+    love.graphics.draw(neon[2][neonFrame], 304 + 50, 550, 0, 1, 1)
+    love.graphics.draw(neon[2][neonFrame], 304 + 180, 650, 0, 1, 1)
+
+
+    love.graphics.draw(neon[3][neonFrame], 1280/2 + 380, 512, 0, 1, 1)
+    love.graphics.draw(neon[1][neonFrame] , 1280/2 + 40, 600, 0, 1, 1)
+
 end
 
 function game_keypressed(key)
