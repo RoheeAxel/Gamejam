@@ -21,8 +21,12 @@ function love.load()
     --Map loading
     myMap = require("mapLoader")
     currentMap = {}
-    currentMap[1] = myMap.generateMap("Maps/Lvl2/level-a", 1)
-    currentMap[2] = myMap.generateMap("Maps/Lvl1/mapside", 1)
+    currentMap[1] = {}
+    currentMap[1][1] = myMap.generateMap("Maps/Lvl1/level-a", 1)
+    currentMap[1][2] = myMap.generateMap("Maps/Lvl1/level-a", 1)
+    currentMap[2] = {}
+    currentMap[2][1] = myMap.generateMap("Maps/Lvl2/level-a", 1)
+    currentMap[2][2] = myMap.generateMap("Maps/Lvl2/level-b", 1)
     separatedTileSet = myMap.makeQuad()
     --Background
     -- Background
@@ -81,7 +85,7 @@ function love.draw()
     elseif game_state == 'option' then
         draw_option()
     else
-        draw_game(frame)
+        draw_game(frame, player1.lvl)
     end
 end
 
