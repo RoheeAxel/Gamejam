@@ -9,7 +9,7 @@ function findOtherTp(map)
     return 0
 end
 
-function findPlayer(map, player_to_find)
+function spawnPlayer(map, player_to_find)
     for i = 1, #map do
         for j = 1, #map[i] do
             if map[i][j] == 11 then

@@ -51,9 +51,11 @@ function Draw(tab, x, y)
         end
         my_frame = math.floor((frame)/4) % 15 + 1
         if (id > 23) then
-            love.graphics.draw(image,environement[1][1],xpos + x,ypos + y)
+          love.graphics.draw(image,environement[1][1],xpos + x,ypos + y)
+          love.graphics.setColor(currentMap[player1.lvl].color[1],currentMap[player1.lvl].color[2],currentMap[player1.lvl].color[3])
         end
         love.graphics.draw(image,environement[my_frame][id],xpos + x,ypos + y)
+        love.graphics.setColor(1,1,1)
       end
     end
   end

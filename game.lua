@@ -16,13 +16,13 @@ function draw_game(frame, i)
         currentMap[4][2] = myMap.generateMap("Maps/Lvl4/level-b", 1)
         player1.dir = 1
         player2.dir = 1
-        findPlayer(currentMap[player1.lvl][1], player1)
-        findPlayer(currentMap[player2.lvl][2], player2)
+        spawnPlayer(currentMap[player1.lvl][1], player1)
+        spawnPlayer(currentMap[player2.lvl][2], player2)
         -- reload map
         return
     end
     myMap.Draw(currentMap[i][1], 304, 256)
-    myMap.Draw(currentMap[i][2], 1280/2 + 304, 256)
+    myMap.Draw(currentMap[i][2], 1280/2 + 304, 300)
     if Musics.time ~= 0 then
         Musics.actualtime = time - Musics.time
         love.graphics.setColor(1,0,0)
@@ -60,8 +60,8 @@ function update_game(dt)
        player2.under = 1
 
        if table.getn(currentMap) >= player1.lvl then
-        findPlayer(currentMap[player1.lvl][1], player1)
-        findPlayer(currentMap[player2.lvl][2], player2)
+        spawnPlayer(currentMap[player1.lvl][1], player1)
+        spawnPlayer(currentMap[player2.lvl][2], player2)
        end
     end
 end
